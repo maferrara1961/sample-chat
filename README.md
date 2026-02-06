@@ -2,6 +2,8 @@
 
 Ejemplo para un video de YouTube. App web con chat multi-modelo de OpenAI, historial de conversaciones y titulos generados por IA.
 
+![Vista previa](assets/preview.svg)
+
 ## Requisitos
 
 - Node.js 18+

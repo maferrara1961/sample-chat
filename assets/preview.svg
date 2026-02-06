@@ -1,0 +1,24 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F5F1"/>
+      <stop offset="1" stop-color="#E6DACB"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="32" fill="url(#bg)"/>
+  <rect x="64" y="64" width="260" height="547" rx="24" fill="#1A1815"/>
+  <rect x="92" y="96" width="200" height="54" rx="18" fill="#F5A45A"/>
+  <rect x="92" y="180" width="200" height="36" rx="14" fill="#2D2924"/>
+  <rect x="92" y="228" width="200" height="36" rx="14" fill="#2D2924"/>
+  <rect x="92" y="276" width="200" height="36" rx="14" fill="#3B332D"/>
+  <rect x="356" y="64" width="780" height="96" rx="28" fill="#FFFFFF"/>
+  <rect x="356" y="186" width="480" height="92" rx="22" fill="#1F1B16"/>
+  <rect x="716" y="300" width="420" height="84" rx="22" fill="#FFFFFF"/>
+  <rect x="356" y="412" width="780" height="110" rx="26" fill="#FFFFFF"/>
+  <rect x="372" y="436" width="560" height="60" rx="18" fill="#F0E9E1"/>
+  <rect x="952" y="436" width="164" height="60" rx="18" fill="#D9772F"/>
+  <text x="96" y="130" font-family="Space Grotesk, sans-serif" font-size="18" fill="#2B1405">OpenAI Chat Lab</text>
+  <text x="380" y="120" font-family="Instrument Serif, serif" font-size="28" fill="#1B1A18">Chat multi-modelo</text>
+  <text x="380" y="252" font-family="Space Grotesk, sans-serif" font-size="18" fill="#F8F2EA">User: Hola, dame ideas de prompts</text>
+  <text x="736" y="350" font-family="Space Grotesk, sans-serif" font-size="18" fill="#1B1A18">Assistant: Aqui tienes 3 ideas...</text>
+</svg>
