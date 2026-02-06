@@ -54,6 +54,35 @@
       </main>
     </div>
 
+    <div class="modal" id="authModal" aria-hidden="true">
+      <div class="modal-card">
+        <div>
+          <p class="modal-eyebrow">Acceso demo</p>
+          <h2>Ingresa tus credenciales</h2>
+          <p class="modal-subtitle">
+            Sin API key, la app funciona en modo demostracion.
+          </p>
+        </div>
+        <form id="authForm">
+          <label>
+            Usuario
+            <input id="username" type="text" autocomplete="username" required />
+          </label>
+          <label>
+            Password
+            <input
+              id="password"
+              type="password"
+              autocomplete="current-password"
+              required
+            />
+          </label>
+          <p class="modal-error" id="authError"></p>
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+    </div>
+
     <script src="/app.js" type="module"></script>
   </body>
 </html>
