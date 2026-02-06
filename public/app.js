@@ -17,7 +17,7 @@ const MODEL_PREF_KEY = "openai-model-pref-v1";
 
 let sessions = loadSessions();
 let activeSessionId = sessions[0]?.id || null;
-let hasOpenAIKey = false;
+let hasAnyProviderKey = false;
 let top5Models = [];
 let demoToken = localStorage.getItem(DEMO_TOKEN_KEY);
 
@@ -110,10 +110,10 @@ function getAuthHeaders() {
 async function loadConfig() {
   const res = await fetch("/api/config");
   const data = await res.json();
-  hasOpenAIKey = Boolean(data.hasOpenAIKey);
+  hasAnyProviderKey = Boolean(data.hasAnyProviderKey);
   top5Models = data.top5 || [];
 
-  if (!hasOpenAIKey && !demoToken) {
+  if (!hasAnyProviderKey && !demoToken) {
     authModal.classList.add("show");
     return false;
   }
@@ -134,7 +134,13 @@ async function loadModels() {
       headers: demoToken ? { "X-Demo-Token": demoToken } : {},
     });
     const data = await res.json();
-    if (!res.ok) throw new Error(data.error || "Error");
+    if (!res.ok) {
+      if (res.status === 401) {
+        authModal.classList.add("show");
+        return;
+      }
+      throw new Error(data.error || "Error");
+    }
 
     modelSelect.innerHTML = "";
     const topGroup = document.createElement("optgroup");
@@ -182,7 +188,7 @@ async function loadModels() {
       saveModelPreference(initial);
     }
   } catch (err) {
-    modelSelect.innerHTML = "<option>Configura OPENAI_API_KEY</option>";
+    modelSelect.innerHTML = "<option>Configura API keys</option>";
   }
 }
 
@@ -215,12 +221,19 @@ async function sendMessage() {
       }),
     });
     const data = await res.json();
-    if (!res.ok) throw new Error(data.error || "Error");
+    if (!res.ok) {
+      addMessage("assistant", data.error || "Error al generar respuesta.");
+      if (res.status === 401) authModal.classList.add("show");
+      return;
+    }
 
     addMessage("assistant", data.text || "");
     await updateTitle();
   } catch (err) {
-    addMessage("assistant", "No se pudo generar respuesta. Revisa tu API key.");
+    addMessage(
+      "assistant",
+      err.message || "No se pudo generar respuesta. Revisa tus API keys."
+    );
   }
 }
 
