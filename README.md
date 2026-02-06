@@ -4,6 +4,8 @@ Ejemplo para un video de YouTube. App web con chat multi-modelo de OpenAI, histo
 
 ![Vista previa](assets/preview.svg)
 
+![Demo (mock)](assets/preview.gif)
+
 ## Requisitos
 
 - Node.js 18+
