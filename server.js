@@ -190,7 +190,7 @@ async function callMistral({ model, messages }) {
 }
 
 async function callMetaCompatible({ model, messages }) {
-  const base = META_API_BASE_URL.replace(/\\/$/, "");
+  const base = META_API_BASE_URL.replace(/\/$/, "");
   const response = await fetch(`${base}/v1/chat/completions`, {
     method: "POST",
     headers: {
