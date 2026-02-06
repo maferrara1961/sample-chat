@@ -1,0 +1,13 @@
+{
+  "name": "openai-multi-model-chat",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "openai": "^4.73.1"
+  }
+}

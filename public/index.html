@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenAI Multi-Model Chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="logo">OA</div>
+          <div>
+            <p class="brand-title">OpenAI Chat Lab</p>
+            <p class="brand-subtitle">Modelos recientes, una sola vista.</p>
+          </div>
+        </div>
+        <button class="new-chat" id="newChat">+ Nueva conversacion</button>
+        <div class="history" id="history"></div>
+        <div class="sidebar-footer">
+          <p class="hint">Historial local en este navegador.</p>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Sesion activa</p>
+            <h1 id="activeTitle">Nueva conversacion</h1>
+          </div>
+          <div class="model-select">
+            <label for="model">Modelo</label>
+            <select id="model"></select>
+          </div>
+        </header>
+
+        <section class="chat" id="chat"></section>
+
+        <footer class="composer">
+          <textarea
+            id="prompt"
+            placeholder="Escribe tu mensaje y presiona Enter..."
+            rows="1"
+          ></textarea>
+          <button id="send">Enviar</button>
+        </footer>
+      </main>
+    </div>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
